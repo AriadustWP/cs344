@@ -1,0 +1,5 @@
+1. Function
+2. Operator = dictionary
+   Initial states = dictionary (list as a value)
+   goal states = dictionary (list as a value)
+3.

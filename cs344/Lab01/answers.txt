@@ -1,5 +1,27 @@
+GPS
+
+    Is the GPS problem solver implemented as a class or as a function?
+    The solver requires initial states, goal states and operators. Of what type are these objects?
+    Is the mechanism recursive? If so, how does it implement its recursion?
+
 1. Function
 2. Operator = dictionary
    Initial states = dictionary (list as a value)
    goal states = dictionary (list as a value)
-3.
+3. No, it is not recursive (for loop goes through whole process)
+
+
+
+Monkey
+
+    What famous puzzle does this code model and what are the rules of that puzzle? Does the code faithfully implement the puzzle?
+    What components does each domain action specify?
+    How does the GPS mechanism solve the problem? Be prepared to specify this in detail. You can use the logging feature to print a trace of the mechanism’s deliberations.
+    Is this code artificially intelligent? If so, which definition (or definitions) of AI from the text does it satisfy?
+    Would a monkey who/that solves the problem in the real world be displaying intelligence?
+
+1. Monkey/Banana problem (hungry monkey is left in a room with banana just high enough for monkey that it needs to use both stool and stick to reach it). Sample program is missing a stick as a tool, but all others are faithfully implemented.
+2. 
+3. Starts from final goal, work backward until initial condition(s) are met, then make action in the backward order (but make additional action to fulfill unmet preconditions).
+4. It satisfies "Thinking Rationally" definition of AI (made logical action based on precondition to achieve an end goal)
+5. Yes, monkey made a rational decision based on the environment. It saw the banana, used the tools around it to make right choice, but it didn't know the outcome of its action in advance. 

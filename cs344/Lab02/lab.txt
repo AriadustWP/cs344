@@ -1,0 +1,41 @@
+
+    Which of the local search algorithms solves the problem? How well does each algorithm do?
+    Which algorithm works more quickly?
+    Does the starting value for x make any difference? Why or why not?
+    What affect does changing the delta step value make on each algorithm? Why?
+    What is the purpose of the exp_schedule() method in the simulated annealing function call?
+
+a. Both hill-climbing and simulated annealing solves the problem
+b. 
+c. No, due to having single local maximum (= global max.), starting position doesn't influence final outcome of both hill-climbing and simulated annealing as there is no alternative local maxima to settle down
+d. 
+e. To calculate a "Temperature" as time goes on
+
+
+    How do each of the algorithms do on this problem space? Why?
+    Does the starting value make any difference here?
+    Does modifying the step size (i.e., delta) affect the operation of the two algorithms? Why or why not?
+    What are the maximum and minimum possible values here, and how do the two algorithms score with respect to them?
+
+a.
+b.
+c.
+d.
+
+
+    How does each algorithm do with these restarts? Why?
+    What are the average values of the runs for each of the algorithms?
+    If one of the algorithms does better, explain why; if not, explain why not.
+
+a.
+b.
+c.
+
+
+    For which algorithm does beam search make the most sense?
+    How many solutions could you maintain with reasonable space and time constraints?
+    How would you modify the code to implement beam search? How is it different from random restarts, if at all? 
+
+a.
+b.
+c.

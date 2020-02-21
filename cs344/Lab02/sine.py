@@ -6,7 +6,7 @@ The function is a linear function  with a single, discontinuous max value
 @author: kvlinden
 @version 6feb2013
 """
-from search import Problem, hill_climbing, simulated_annealing, \
+from aima.search import Problem, hill_climbing, simulated_annealing, \
     exp_schedule, genetic_search
 from random import randrange
 import math

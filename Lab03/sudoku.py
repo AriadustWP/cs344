@@ -24,7 +24,7 @@ puzzle.display(puzzle.infer_assignment())
 starttime = time.time()
 # depth_first_graph_search(puzzle)
 # AC3(puzzle)
-# backtracking_search(puzzle)  # Consider adding: select_unassigned_variable=mrv & inference=forward_checking
+# backtracking_search(puzzle, inference=forward_checking)  # Consider adding: select_unassigned_variable=mrv & inference=forward_checking
 min_conflicts(puzzle)
 endtime = time.time() - starttime
 

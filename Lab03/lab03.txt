@@ -1,0 +1,73 @@
+Exercise 3.1
+
+    Which algorithms work (in a timely manner) and which don’t? Explain your results in terms of the capabilities (and implementations) of the algorithms and nature of the problems.
+
+    What effect does configuring the settings for backtracking have on the results? Try the following:
+        Set the variable/value ordering (i.e., the select_unassigned_variable parameter) to first-unassigned-variable (the default) or minimum-remaining-values (i.e., mrv).
+        Set the inference (i.e., the inference parameter) to forward-checking (i.e., forward_checking).
+
+    Which, if any, of these settings should work best for sudoku? What combination of settings actually works the best?
+
+1. 
+
+depth_first_graph_search
+    Solved: Success 0.0019178390502929688s
+    Easy: Fail (5 runs)
+    Hard: 5+ min (3 runs)
+    Hardest: 5+ min (3 runs)
+AC3
+    Solved: Success 0.007353544235229492s
+    Easy: Success 0.018192529678344727s
+    Hard: Fail (10 runs)
+    Hardest: Fail (10 runs)
+backtracking_search
+    Solved: Success 0.0026280879974365234s
+    Easy: Success 26.53970170021057s
+          5+ min(mrv)
+          Success 0.01702427864074707s
+    Hard: 5+ min (normal)
+          5+ min (mrv)
+          Success 59.45769214630127s
+    Hardest: 5+ min (normal)
+             5+ min (mrv)
+             Success 0.341580867767334s
+
+min_conflicts
+    Solved: Success 0.0012662410736083984s
+    Easy: Fail (3 runs)
+    Hard: Fail (3 runs)
+    Hardest: Fail (3 runs)
+
+
+2. mrv worsen the run time, but forward checking made significant improvement. It was interesting to see that "Hardest" problem for a person wasn't the hardest problem for AI
+
+3. I would use backtracking search with forward search heuristics, as it successfully found solution for all four types of sudoku problems and was the quickest, as well.
+
+Exercise 3.2
+
+    How large can n get for each of the algorithms? Why?
+    What backtracking settings work the best? Why?
+    How many steps does Min-Conflicts require to do its work? Why?
+
+***AC3 was excluded as it didn't work on the lab machine for an unknown reason
+
+1.
+Depth first graph search: 8 (9 or beyond takes too long to compute as search tree gets too deep and wide)
+Backtracking search: 30 with 100% success rate (31 and beyond takes too long to compute - better than depth-first, but it takes long time for the same reason)
+Backtracking search (forward checking): No noticible speedup compared to vanilla option
+Backtracking search (mrv): ~70 with 100% success rate (n > 80 takes too long to compute)
+min conflict: 2048 with 100% success rate for n^x test (n > 4096 takes too long to compute - Likely HW limitation rather than algorithmic limitation)
+
+2.
+Backtracking with mrv showed most significant improvement as it selects most constrained variables first (get rid of unlikely ones early), leaving fewer selection of variables than regular backtracking algorithm.
+
+3.
+Less than 100 (even for n = 1000000) - From wikipedia 
+Exercise 3.3
+
+    Compare and contrast the specifications for CSP (i.e., csp.CSP) and traditional problems (i.e., search.Problem). Be sure to consider the nature of states, domains, actions, results and goal tests.
+    Compare and contrast the nature of the heuristics deployed in traditional and constraint-based problem solving.
+
+1. Traditional problems (TP) and CSP both requires initial conditions (initial state (TP) and variables (CSP)), set of actions (transition state (TP) and domain (CSP)) and a goal state to determine success or failure. However, CSP has additional methods to enforce contraint for the final solution
+
+2. Heuristics in both TP and CSP attemps to constrict number of paths, but CSP appears to focus on number of possible values after the action (or picking domain)

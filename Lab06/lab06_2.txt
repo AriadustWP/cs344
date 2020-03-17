@@ -1,0 +1,53 @@
+Exercise 6.2
+Won Seok Park
+
+1. We want the machine learned model to: 
+    Be able to predict the treatment outcome of tuberculosis (TB) patients based on their behavior patterns
+
+2. Our ideal outcome is: 
+    To predict probability of patients completing through the TB treatment program
+
+3a. Our success metrics are:
+    Accurate prediction of patient's outcome after he or she has completed the treatment
+
+3b. Our key results (KR) for the success metrics are:
+    The system succesfully predicts the result of each patient with 95% of the time
+
+3c. Our ML model is deemed a failure if:
+    The system fails to predict the result of each patients with the 95% accuracy
+
+4a. The output from our ML model will be:
+    used to measure the probability of patients completing through the treatment project
+
+4b. The output is defined as:
+    the probability of patients completing through the treatment
+
+ the probability of whether the receiver took action to the email.
+
+5a. Our output from the ML model will be made:
+    1) When we receive patient's information (smoking, drinking, financial status, etc...), 2) a month of patient's behavior observation
+
+5b. The output will be used for:
+    estimate whether patients can go through the whole treatment or needs additional attention
+
+6. If we didn't use ML, we would:
+    manually go through the past history of patients to "score" them, and make appropriate action based on it.
+
+
+Formulating
+7a. We would use 3-class, single-label classification to categorize patients into a low-risk, medium-risk, and high-risk patients based on the treatment completion probability.
+
+7b. High-risk patients (<80% predicted completion rate), and Low-risk patient (>80% predicted completion rate)
+
+8a. Inputs:
+        1. Smoking (0/1)
+	    2. Drinking (0/1)
+	    3. Family income ($/day) - (Could be further categorized by the range of income)
+	    4. Past treatment history (new/relapse) OR (0/1)
+	    5. ratio of medication taken during the first month (0.00~1.00)
+    Outputs:
+        1. 0% ~ 100% (further classified into low-risk, med-risk, high-risk based on reputable standard such as based on WHO's manual)
+
+9a. The data inputs would come from the randomly selected TB patients. It would require reasonable amount of effort to gather month of patient's medication taking behavior.
+
+10a. I would choose the past treatment history, smoking, and ratio of medication taken during the first month as these three factors are most significant in patients' outcome (based on the past experience).

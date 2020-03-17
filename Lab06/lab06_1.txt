@@ -1,0 +1,15 @@
+CS344 Exercise 6.1
+Won-Seok Park
+
+Q. Compute the information gain provided by the “Hungry?“ question from the restaurant domain. Use this restaurant data (AIMA, Figure 18.3). Would this question be better than either of the questions discussed in class (i.e., “Patrons?”, “Type?”? 
+A.
+    Entropy(WillWait) = -(p(WillWait) * log2(p(WillWait)) + p(not WillWait) + log2(p(not WillWait)))
+                  = -(1/2 * log2(1/2) + 1/2 * log2(1/2)) = 1
+
+    Remainder   = p(Hungry) * Entropy(Hungry&Yes) + p(not Hungry) * Entropy(not Hungry&Yes)
+                = 7/12 * -(5/7 * lg(5/7) + 2/7 * lg(2/7)) + 5/12 * -(1/5 * lg(1/5) + 4/5 * lg(4/5))
+                = 0.8043
+		    
+    Gain(Hungry) = 1 - 0.8043 = 0.1957
+
+    In class, we have discussed about the question and concluded that 'Patron' (gain of 0.54) is the better choice than 'Type' (gain of 0.0) if we don't consider options further below. 

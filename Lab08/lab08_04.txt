@@ -1,0 +1,3 @@
+Exercise 8.4
+  a. What good did the K-fold validation do in this exercise?
+    K-fold validation allows us to valida

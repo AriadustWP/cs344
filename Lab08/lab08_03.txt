@@ -1,0 +1,36 @@
+Exercise 8.3
+  a. They recommend FTRL for L1 optimization, but the code specifies the same rate (learning_rate) for all runs. How is FTRL managing the learning rate?
+    It controls how the learning rate decreases through the training through the learning_rate_power.
+	
+  b. What good does the bucketing/binning do?
+    It can simplify the data by chunking it (quantizing it), allowing developers to use discrete methods.
+	
+  c. Submit your solutions to tasks 1–2. Did you find their task 1 bucketing to make sense? Identify one unique feature cross for task 2 and explain how it could be useful.
+    Task 1.
+       bucketized_latitude = tf.feature_column.bucketized_column(
+      latitude, boundaries=get_quantile_based_boundaries(
+        training_examples["latitude"], 10))
+  	  
+      bucketized_housing_median_age = tf.feature_column.bucketized_column(
+        housing_median_age, boundaries=get_quantile_based_boundaries(
+          training_examples["housing_median_age"], 10))
+  		
+      bucketized_median_income = tf.feature_column.bucketized_column(
+        median_income, boundaries=get_quantile_based_boundaries(
+          training_examples["median_income"], 10))
+  		
+      bucketized_rooms_per_person = tf.feature_column.bucketized_column(
+        rooms_per_person, boundaries=get_quantile_based_boundaries(
+          training_examples["rooms_per_person"], 10))
+
+      Final RMSE = 88.50
+
+      Got better RMSE score (so it must be better :D). I thought bucketing made sense for all but latitude (due to no crazy outliers with relatively low standard deviation)
+		
+	Task 2.
+      long_x_lat = tf.feature_column.crossed_column([
+	  bucketized_longitude, bucketized_latitude], 1000)
+    
+      Final RMSE = 80.36
+
+      Feature cross between longitude and latitude would be able to pin down which exact city block are more likely to be expansive than others (versus compairing prices for only latitude/longitude, which is less useful in real life)

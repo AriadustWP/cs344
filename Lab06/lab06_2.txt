@@ -22,8 +22,6 @@ Won Seok Park
 4b. The output is defined as:
     the probability of patients completing through the treatment
 
- the probability of whether the receiver took action to the email.
-
 5a. Our output from the ML model will be made:
     1) When we receive patient's information (smoking, drinking, financial status, etc...), 2) a month of patient's behavior observation
 

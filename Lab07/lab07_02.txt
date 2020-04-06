@@ -1,0 +1,49 @@
+Exercise 7.2
+  a. Compare and contrast categorical vs numerical data.
+    Numerical data is data represented numerically and can be manipulated with numerical operations (basic arithmatics to complex statistics). Categorical data is data that is represented as labels (including things written in numbers such as ZIP codes).
+  b. Submit solutions to tasks 1–2. Include your best hyper-parameter values and the resulting RMSE, but not the training output.
+    1.
+	train_model(
+        learning_rate=0.00005,
+        steps=200,
+        batch_size=5
+    )
+
+    187.86
+
+    RMSE (on training data):
+      period 00 : 226.79
+      period 01 : 216.60
+      period 02 : 207.06
+      period 03 : 198.26
+      period 04 : 190.31
+      period 05 : 184.63
+      period 06 : 179.61
+      period 07 : 177.38
+      period 08 : 174.38
+      period 09 : 170.38
+    Final RMSE: 170.38
+
+    2.
+    train_model(
+        learning_rate=0.00005,
+        steps=400,
+        batch_size=5
+        input_feature = "population"
+    )
+	
+    RMSE (on training data):
+        period 00 : 225.63
+        period 01 : 214.62
+        period 02 : 204.67
+        period 03 : 195.94
+        period 04 : 188.92
+        period 05 : 184.35
+        period 06 : 180.10
+        period 07 : 177.66
+        period 08 : 176.46
+        period 09 : 175.94
+    Final RMSE: 175.94  
+
+  c. What are the hyper-parameters learned in these exercises and is there a “standard” tuning algorithm for them? Explain your answer.
+    The hyper-parameters are learning rate, steps, and batch size. There is no standard as it is data dependent (each case needs to go through testing to find optimal tuning algorithm)

@@ -1,0 +1,8 @@
+Exercise 7.1
+  a. Submit your solutions to Exercise 1-2
+    1. cities['Is name saint and wide'] = (cities['City name'].apply(lambda name: name.startswith('San'))) & (cities['Area square miles'] > 50)
+    2. cities.reindex([2, 0, 1, 5]) **5 Gives NaN results
+  b. Why would one use Pandas rather than the standard data manipulation features provided by NumPy?
+    Pandas provides additional tools that is optimized to handle larger data (multi-dimensional arrays). NumPy is more efficient when handling smaller set of data (50k or less rows), but Pandas generally perform better when 500k rows or greater
+  c. Under what circumstances would it be useful to reorder/shuffle a Pandas DataFrame?
+    Primarily for random sample of selections from a dataset for statistical purposes (just learned it in Stat 243 last week).
